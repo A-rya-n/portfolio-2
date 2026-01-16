@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.header-overview {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  .header-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 18%;
+    height: 100%;
+  }
+
+  .header-main {
+    flex: auto;
+  }
+
+  .header-action {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    font-size: 1.2rem;
+  }
+}
+
+.header-title span {
+  font-size: 3rem;
+}
+
+.header-action .action-button {
+  position: relative;
+  cursor: pointer;
+
+  padding: 20px 5px 5px 5px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.action-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+  background-color: black;
+
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-out;
+}
+
+.active-link::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
